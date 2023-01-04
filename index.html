@@ -34,12 +34,14 @@ header {
     padding: 10px;
     background-color: rgb(164, 71, 236);
     align-content: center;
-    margin: 0;
-    justify-content: center;
 }
-.center{
-    margin: 0;
-    justify-content: center;
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 </style>
@@ -80,7 +82,7 @@ header {
         },
     }">
     <div>
-        <div class="center" ><button id="buttonborder" x-on:click="getData">Druk</button></div>
+        <div class="vertical-center" ><button id="buttonborder" x-on:click="getData">Druk</button></div>
     <dl>
         <dt>name:</dt> <strong x-text="responsedata.name">Placeholder</strong>
         <dt>mmr:</dt><strong x-text="responsedata.mmr">Placeholder</strong>
