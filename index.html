@@ -36,7 +36,12 @@ header {
     align-content: center;
     border: 3px solid rgb(105, 0, 128);
 }
-
+.inputborder{
+    padding: 5px;
+    background-color: rgb(164, 71, 236);
+    align-content: center;
+    border: 3px solid rgb(105, 0, 128);
+}
 .vertical-center {
     display: flex;
     justify-content: center;
@@ -136,9 +141,9 @@ table, th, td {
     }"
 
 >
-    <input placeholder="name" type="text" x-model="postname">
-    <input placeholder="mmr" type="number" x-model="postmmr">
-    <input placeholder="level" type="number" x-model="postlevel">
+    <input class="inputborder" placeholder="name" type="text" x-model="postname">
+    <input class="inputborder" placeholder="mmr" type="number" x-model="postmmr">
+    <input class="inputborder" placeholder="level" type="number" x-model="postlevel">
         <button x-on:click="createPost">create</button>
 
     <p>name that was inserted: <strong x-text="responsedata.name"></strong></p>
