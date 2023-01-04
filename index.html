@@ -80,9 +80,7 @@ table, th, td {
 </ul>
 <div>
     <table style="width:100%">
-        <tr>
-        name
-      </tr>
+        
           <th>
         mmr
       </th>
@@ -94,9 +92,9 @@ table, th, td {
       </th>
       <tr x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
       .then(response => response.json())
-      .then(data => players = data)">
+      .then(data => players = data)"><tr>name
       <template x-for="ply in players" :key="index">
-        <td><p x-text="ply">Placeholder</p></td>
+        <td><p x-text="ply.name">Placeholder</p></td></tr>
     </template>
         
       </tr>
