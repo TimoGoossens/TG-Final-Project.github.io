@@ -83,13 +83,6 @@ table, th, td {
     .then(response => response.json())
     .then(data => players = data)">
     
-       
-          <th>
-        level
-      </th>
-      <th>
-        id
-      </th>
       <tr>
         <th>name</th>
       <template x-for="ply in players" :key="index">
@@ -103,9 +96,23 @@ table, th, td {
             mmr
           </th>
       <template x-for="ply in players" :key="index">
-        
-        <td><p x-text="ply.name">Placeholder</p></td>
-        
+        <td><p x-text="ply.mmr">Placeholder</p></td>
+    </template>
+    </tr>
+    <tr>
+        <th>
+            level
+          </th>
+      <template x-for="ply in players" :key="index">
+        <td><p x-text="ply.level">Placeholder</p></td>
+    </template>
+    </tr>
+    <tr>
+        <th>
+            id
+          </th>
+      <template x-for="ply in players" :key="index">
+        <td><p x-text="ply.id">Placeholder</p></td>
     </template>
     </tr>
     </table>
