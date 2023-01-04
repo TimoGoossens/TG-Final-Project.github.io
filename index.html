@@ -92,12 +92,12 @@ table, th, td {
       <th>
         id
       </th>
-      <tr>name</tr>
-      <template x-for="ply in players" :key="index">
+      
+      <tr x-for="ply in players" :key="index">
         
         <td><p x-text="ply.name">Placeholder</p></td>
         
-    </template>
+      </tr>
     
     </table>
 </div>
