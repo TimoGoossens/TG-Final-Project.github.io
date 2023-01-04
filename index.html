@@ -91,35 +91,16 @@ table, th, td {
       </th>
       <th>
         id
-      </th>
+      </th><tr>
       <template x-for="ply in players" :key="index">
-        <tr>
+        
             <th>
                 name
               </th>
         <td><p x-text="ply.name">Placeholder</p></td>
-        </tr>
-        <tr>
-            <th>
-                mmr
-              </th>
-        <td><p x-text="ply.mmr">Placeholder</p></td>
-        </tr>
-        <tr>
-            <th>
-                level
-              </th>
-        <td><p x-text="ply.level">Placeholder</p></td>
-        </tr>
-        <tr>
-            <th>
-                id
-              </th>
-        <td><p x-text="ply.id">Placeholder</p></td>
-        </tr>
-    </template>
         
-      
+    </template>
+    </tr>
     </table>
 </div>
  <h3>klik op de knop om een random speler uit de lijst te tonen</h3>
