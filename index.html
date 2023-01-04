@@ -96,10 +96,7 @@ table, th, td {
       .then(response => response.json())
       .then(data => players = data)">
       <template x-for="ply in players" :key="index">
-        <td><p x-text="ply.name">Placeholder</p></td>
-        <td><p x-text="ply.mmr">Placeholder</p></td>
-        <td><p x-text="ply.level">Placeholder</p></td>
-        <td><p x-text="ply.id">Placeholder</p></td>
+        <tr><p x-text="ply.name">Placeholder</p></tr>
     </template>
         
       </tr>
