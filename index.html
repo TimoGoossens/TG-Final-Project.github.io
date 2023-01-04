@@ -52,9 +52,6 @@ table, th, td {
   border:1px solid rgb(105, 0, 128);
   text-align: center;
 }
-table{
-    background-color: rgb(188, 121, 203);
-}
 th{
     background-color: rgb(188, 121, 203);
 }
@@ -193,7 +190,7 @@ th{
     </div>
     <div class="vertical-center"><button id="buttonborder" x-on:click="createPost">create</button></div>
     <h2>tabel met nieuwe player</h2>
-    <div>
+    <div class="vertical-center">
         <table style="width:100%">
             <th>
             name
@@ -204,7 +201,6 @@ th{
               <th>
             level
           </th>
-          
           <tr>
             <td><p x-text="responsedata.name">Placeholder</p></td>
             <td><p x-text="responsedata.mmr">Placeholder</p></td>
