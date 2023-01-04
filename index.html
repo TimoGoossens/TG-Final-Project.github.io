@@ -87,7 +87,7 @@ th{
     .then(data => players = data)">
     
       <tr>
-        <th><strong>name:</strong>
+        <th><strong>NAME:</strong>
             </th>
       <template x-for="ply in players" :key="index">
         
@@ -97,7 +97,7 @@ th{
     </tr>
     <tr>
         <th>
-            <strong>mmr:</strong>
+            <strong>MMR:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.mmr">Placeholder</p></td>
@@ -105,7 +105,7 @@ th{
     </tr>
     <tr>
         <th>
-            <strong>level:</strong>
+            <strong>LEVEL:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.level">Placeholder</p></td>
@@ -113,7 +113,7 @@ th{
     </tr>
     <tr>
         <th>
-            <strong>id:</strong>
+            <strong>ID:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.id">Placeholder</p></td>
@@ -133,7 +133,7 @@ th{
         },
     }">
     <div>
-        <div class="vertical-center" ><button id="buttonborder" x-on:click="getData">Druk</button></div>
+        <div class="vertical-center" ><button id="buttonborder" x-on:click="getData"><strong>PUSH</strong> </button></div>
         </div>
     <div>
         <table style="width:100%">
