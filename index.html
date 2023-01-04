@@ -43,7 +43,9 @@ header {
     align-items: center;
     height: 100px;
 }
-
+table, th, td {
+  border:1px solid rgb(105, 0, 128);
+}
 </style>
 </head>
 <body>
@@ -91,18 +93,26 @@ header {
         </dl>
         </div>
     <div>
-        <table>
-            <tr>
-              <td>Emil</td>
-              <td>Tobias</td>
-              <td>Linus</td>
-            </tr>
-            <tr>
-              <td>16</td>
-              <td>14</td>
-              <td>10</td>
-            </tr>
-          </table>
+        <table style="width:100%">
+            <th>
+            name
+          </th>
+              <th>
+            mmr
+          </th>
+              <th>
+            level
+          </th>
+          <th>
+            id
+          </th>
+          <tr>
+            <td><strong x-text="responsedata.name">Placeholder</strong></td>
+            <td><strong x-text="responsedata.mmr">Placeholder</strong></td>
+            <td><strong x-text="responsedata.level">Placeholder</strong></td>
+            <td><strong x-text="responsedata.id">Placeholder</strong></td>
+          </tr>
+        </table>
     </div>
     </div>
     
