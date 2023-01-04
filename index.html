@@ -33,6 +33,7 @@ header {
 #buttonborder{
     padding: 10px;
     background-color: rgb(164, 71, 236);
+    align-content: center;
 }
 
 </style>
@@ -73,7 +74,7 @@ header {
         },
     }">
     <div>
-        <button x-on:click="getData">druk</button>
+        <button id="buttonborder" x-on:click="getData">Druk</button>
     <dl>
         <dt>name:</dt> <strong x-text="responsedata.name">Placeholder</strong>
         <dt>mmr:</dt><strong x-text="responsedata.mmr">Placeholder</strong>
