@@ -76,6 +76,7 @@ table, th, td {
   .then(data => players = data)">
     <template x-for="ply in players" :key="index">
         <li x-text="ply.name"></li>
+        <li x-text="ply.mmr"></li>
     </template>
 </ul>
  <h3>klik op de knop om een random speler uit de lijst te tonen</h3>
