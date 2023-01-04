@@ -33,11 +33,15 @@ header {
 #buttonborder{
     padding: 10px;
     background-color: rgb(164, 71, 236);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
+    align-content: center;
     border: 3px solid rgb(105, 0, 128);
+}
+
+.vertical-center {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 
 </style>
@@ -78,7 +82,7 @@ header {
         },
     }">
     <div>
-        <button id="buttonborder" x-on:click="getData">Druk</button>
+        <div class="vertical-center" ><button id="buttonborder" x-on:click="getData">Druk</button></div>
     <dl>
         <dt>name:</dt> <strong x-text="responsedata.name">Placeholder</strong>
         <dt>mmr:</dt><strong x-text="responsedata.mmr">Placeholder</strong>
