@@ -82,14 +82,7 @@ table, th, td {
     <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
     .then(response => response.json())
     .then(data => players = data)">
-    <th>
-        name
-      </th>
-      <template x-for="ply in players" :key="index">
-        <tr>
-        <td><p x-text="ply.name">Placeholder</p></td>
-        </tr>
-    </template>
+    
           <th>
         mmr
       </th>
@@ -99,6 +92,32 @@ table, th, td {
       <th>
         id
       </th>
+      <template x-for="ply in players" :key="index">
+        <tr>
+            <th>
+                name
+              </th>
+        <td><p x-text="ply.name">Placeholder</p></td>
+        </tr>
+        <tr>
+            <th>
+                mmr
+              </th>
+        <td><p x-text="ply.mmr">Placeholder</p></td>
+        </tr>
+        <tr>
+            <th>
+                level
+              </th>
+        <td><p x-text="ply.level">Placeholder</p></td>
+        </tr>
+        <tr>
+            <th>
+                id
+              </th>
+        <td><p x-text="ply.id">Placeholder</p></td>
+        </tr>
+    </template>
         
       
     </table>
