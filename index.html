@@ -77,13 +77,6 @@ th{
         </header>
 <h2>lijst van alle players</h2>
 <h4>(refresh pagina als je de lijst wilt updaten!)</h4>
-<ul x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
-  .then(response => response.json())
-  .then(data => players = data)">
-    <template x-for="ply in players" :key="index">
-        <li x-text="ply.name"></li>
-    </template>
-</ul>
 <div>
     <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
     .then(response => response.json())
