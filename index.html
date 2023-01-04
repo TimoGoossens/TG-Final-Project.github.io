@@ -87,7 +87,8 @@ th{
     .then(data => players = data)">
     
       <tr>
-        <th>name</th>
+        <th><strong>name:</strong>
+            </th>
       <template x-for="ply in players" :key="index">
         
         <td><p x-text="ply.name">Placeholder</p></td>
@@ -96,7 +97,7 @@ th{
     </tr>
     <tr>
         <th>
-            mmr
+            <strong>mmr:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.mmr">Placeholder</p></td>
@@ -104,7 +105,7 @@ th{
     </tr>
     <tr>
         <th>
-            level
+            <strong>level:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.level">Placeholder</p></td>
@@ -112,7 +113,7 @@ th{
     </tr>
     <tr>
         <th>
-            id
+            <strong>id:</strong>
           </th>
       <template x-for="ply in players" :key="index">
         <td><p x-text="ply.id">Placeholder</p></td>
@@ -190,6 +191,7 @@ th{
     </div>
     <div class="vertical-center"><button id="buttonborder" x-on:click="createPost">create</button></div>
     <h2>tabel met nieuwe player</h2>
+    <h6>(als je een nieuwe player hebt gemaakt zie je het hier onder)</h6>
     <div class="vertical-center">
         <table style="width:100%">
             <th>
@@ -211,7 +213,7 @@ th{
     <p>name that was inserted: <strong x-text="responsedata.name"></strong></p>
     <p>mmr that was inserted: <strong x-text="responsedata.mmr"></strong></p>
     <p>level that was inserted: <strong x-text="responsedata.level"></strong></p>
-
+    
 </div>
         </div>
     </div>
