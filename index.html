@@ -85,6 +85,11 @@ table, th, td {
     <th>
         name
       </th>
+      <template x-for="ply in players" :key="index">
+        <tr>
+        <td><p x-text="ply.name">Placeholder</p></td>
+        </tr>
+    </template>
           <th>
         mmr
       </th>
@@ -94,11 +99,6 @@ table, th, td {
       <th>
         id
       </th>
-      <template x-for="ply in players" :key="index">
-        <tr>
-        <td><p x-text="ply.name">Placeholder</p></td>
-        </tr>
-    </template>
         
       
     </table>
