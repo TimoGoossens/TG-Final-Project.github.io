@@ -146,6 +146,8 @@ table, th, td {
     <div><input class="inputborder" placeholder="mmr" type="number" x-model="postmmr"></div>
     <div><input class="inputborder" placeholder="level" type="number" x-model="postlevel"></div>
     </div>
+    <div class="vertical-center"><button id="buttonborder" x-on:click="createPost">create</button></div>
+    <h2>tabel met nieuwe player</h2>
     <div>
         <table style="width:100%">
             <th>
@@ -157,19 +159,14 @@ table, th, td {
               <th>
             level
           </th>
-          <th>
-            id
-          </th>
+          
           <tr>
             <td><p x-text="responsedata.name">Placeholder</p></td>
             <td><p x-text="responsedata.mmr">Placeholder</p></td>
             <td><p x-text="responsedata.level">Placeholder</p></td>
-            <td><p x-text="responsedata.id">Placeholder</p></td>
           </tr>
         </table>
     </div>
-    <div class="vertical-center"><button id="buttonborder" x-on:click="createPost">create</button></div>
-    <h2>tabel met nieuwe player</h2>
     <p>name that was inserted: <strong x-text="responsedata.name"></strong></p>
     <p>mmr that was inserted: <strong x-text="responsedata.mmr"></strong></p>
     <p>level that was inserted: <strong x-text="responsedata.level"></strong></p>
