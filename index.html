@@ -84,9 +84,9 @@ table, th, td {
       .then(response => response.json())
       .then(data => players = data)">
       <template x-for="ply in players" :key="index">
-        <tr>name</tr>
+        <tr>name
         <td><p x-text="ply.name">Placeholder</p></td>
-    
+    </tr>
     </template>
         
       
