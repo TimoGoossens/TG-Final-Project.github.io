@@ -252,21 +252,29 @@
       </div>
     </div>
     <div x-data="{
-        responsedata: null,
-        postname: null,
-        postmmr: null,
-        postlevel: null,
-        postid: null,
-        async getData() {
-            this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/players/random/')).json();
-        },
-    }">
-      <div>
-        <div style="margin: 5px;"><input class="inputborder" placeholder="name" type="text" x-model="postname"></div>
-
+      responsedata: null,
+      postid: null,
+      async createPost() {
+          this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/players/{player_id}/', {
+            method: 'GET',
+            body: JSON.stringify({
+                  id: this.postid
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })).json();
+      },
+  }">
+      <div class="vertical-center" style="margin-bottom: 10px;">
+        <div style="margin: 5px;"><input class="inputborder" placeholder="id" type="number" x-model="postid">
+        </div>
+      </div>
+      <div class="vertical-center"><button id="buttonborder" x-on:click="createPost"><strong>CREATE</strong></button>
       </div>
 
     </div>
+  </div>
 </body>
 
 </html>
