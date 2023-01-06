@@ -76,13 +76,6 @@ th{
         }
     }
 
-</script>
-<script>
-  function alpineInstance() {
-      return {
-          users: {}
-      }
-  }
 
 </script>
     <header>
@@ -226,42 +219,6 @@ th{
 
 </div>
         </div>
-<br>
-
-<h2>lijst van alle players</h2>
-<h4>(refresh pagina als je de lijst wilt updaten!)</h4>
-<div>
-    <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/users/')
-    .then(response => response.json())
-    .then(data => users = data)">
-    
-      <tr>
-        <th><strong>NAME:</strong>
-            </th>
-      <template x-for="usr in users" :key="index">
-        
-        <td><p x-text="usr.email">Placeholder</p></td>
-        
-    </template>
-    </tr>
-    <tr>
-        <th>
-            <strong>MMR:</strong>
-          </th>
-      <template x-for="usr in users" :key="index">
-        <td><p x-text="usr.password">Placeholder</p></td>
-    </template>
-    </tr>
-    </table>
-    <ul x-data="alpineInstance()" x-init="fetch('https://api-service-timogoossens.cloud.okteto.net/players/')
-  .then(response => response.json())
-  .then(data => players = data)">
-    <template x-for="ply in players" :key="index">
-        <li x-text="ply.name"></li>
-    </template>
-</ul>
-</div>
-
     </div>
 </body>
 </html>
