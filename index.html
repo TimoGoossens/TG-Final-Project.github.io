@@ -1,131 +1,149 @@
 <!doctype html>
 <html>
+
 <head>
-    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-body {
-    padding-top: 60px;
-    background-image: url('rocketleague1.jpeg');
-    background-size: cover;
-    background-position: center;
-}
-header {
-    border-bottom: rgb(164, 71, 236) solid;
-    text-align: center;
-
-}
-
-#border{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 50px;
-    align-content: center;
-    margin: auto;
-    height: 600px;
-    width: 700px;
-    background-color: lavender;
-    border: 10px rgb(183, 10, 222) solid;
-    overflow:scroll;
-    word-wrap: break-word;
-}
-#buttonborder{
-    padding: 10px;
-    background-color: rgb(188, 121, 203);
-    align-content: center;
-    border: 3px solid rgb(105, 0, 128);
-}
-.inputborder{
-    padding: 5px;
-    background-color: lavender;
-    align-content: center;
-    border: 3px solid rgb(105, 0, 128);
-}
-.vertical-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-}
-table, th, td {
-  border:1px solid rgb(105, 0, 128);
-  text-align: center;
-}
-table{
-    border:3px solid rgb(105, 0, 128);
-}
-th{
-    background-color: rgb(188, 121, 203);
-}
-
-.wrapper {
-  background: linear-gradient(180deg, #000000, 5%, #b74aea, 50%, #030423);
-}
-
-</style>
-</head>
-<body class="wrapper">
-    
-
-<div id="border">
-  <script>
-    function alpineInstance() {
-        return {
-            players: {}
-        }
+  <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding-top: 60px;
+      background-image: url('rocketleague1.jpeg');
+      background-size: cover;
+      background-position: center;
     }
 
+    header {
+      border-bottom: rgb(164, 71, 236) solid;
+      text-align: center;
 
-</script>
+    }
+
+    #border {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 50px;
+      align-content: center;
+      margin: auto;
+      height: 600px;
+      width: 700px;
+      background-color: lavender;
+      border: 10px rgb(183, 10, 222) solid;
+      overflow: scroll;
+      word-wrap: break-word;
+    }
+
+    #buttonborder {
+      padding: 10px;
+      background-color: rgb(188, 121, 203);
+      align-content: center;
+      border: 3px solid rgb(105, 0, 128);
+    }
+
+    .inputborder {
+      padding: 5px;
+      background-color: lavender;
+      align-content: center;
+      border: 3px solid rgb(105, 0, 128);
+    }
+
+    .vertical-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid rgb(105, 0, 128);
+      text-align: center;
+    }
+
+    table {
+      border: 3px solid rgb(105, 0, 128);
+    }
+
+    th {
+      background-color: rgb(188, 121, 203);
+    }
+
+    .wrapper {
+      background: linear-gradient(180deg, #000000, 5%, #b74aea, 50%, #030423);
+    }
+  </style>
+</head>
+
+<body class="wrapper">
+
+
+  <div id="border">
+    <script>
+      function alpineInstance() {
+        return {
+          players: {}
+        }
+      }
+
+
+    </script>
     <header>
 
-<h1>Rocket league</h1>
-        </header>
-<h2>lijst van alle players</h2>
-<h4>(refresh pagina als je de lijst wilt updaten!)</h4>
-<div>
-    <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
+      <h1>Rocket league</h1>
+    </header>
+    <h2>lijst van alle players</h2>
+    <h4>(refresh pagina als je de lijst wilt updaten!)</h4>
+    <div>
+      <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/players/')
     .then(response => response.json())
     .then(data => players = data)">
-    
-      <tr>
-        <th><strong>NAME:</strong>
-            </th>
-      <template x-for="ply in players" :key="index">
-        
-        <td><p x-text="ply.name">Placeholder</p></td>
-        
-    </template>
-    </tr>
-    <tr>
-        <th>
+
+        <tr>
+          <th><strong>NAME:</strong>
+          </th>
+          <template x-for="ply in players" :key="index">
+
+            <td>
+              <p x-text="ply.name">Placeholder</p>
+            </td>
+
+          </template>
+        </tr>
+        <tr>
+          <th>
             <strong>MMR:</strong>
           </th>
-      <template x-for="ply in players" :key="index">
-        <td><p x-text="ply.mmr">Placeholder</p></td>
-    </template>
-    </tr>
-    <tr>
-        <th>
+          <template x-for="ply in players" :key="index">
+            <td>
+              <p x-text="ply.mmr">Placeholder</p>
+            </td>
+          </template>
+        </tr>
+        <tr>
+          <th>
             <strong>LEVEL:</strong>
           </th>
-      <template x-for="ply in players" :key="index">
-        <td><p x-text="ply.level">Placeholder</p></td>
-    </template>
-    </tr>
-    <tr>
-        <th>
+          <template x-for="ply in players" :key="index">
+            <td>
+              <p x-text="ply.level">Placeholder</p>
+            </td>
+          </template>
+        </tr>
+        <tr>
+          <th>
             <strong>ID:</strong>
           </th>
-      <template x-for="ply in players" :key="index">
-        <td><p x-text="ply.id">Placeholder</p></td>
-    </template>
-    </tr>
-    </table>
-</div>
- <h3>klik op de knop om een random speler uit de lijst te tonen</h3>
-<div x-data="{
+          <template x-for="ply in players" :key="index">
+            <td>
+              <p x-text="ply.id">Placeholder</p>
+            </td>
+          </template>
+        </tr>
+      </table>
+    </div>
+    <h3>klik op de knop om een random speler uit de lijst te tonen</h3>
+    <div x-data="{
         responsedata: null,
         postname: null,
         postmmr: null,
@@ -135,38 +153,46 @@ th{
             this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/players/random/')).json();
         },
     }">
-    <div>
-        <div class="vertical-center" ><button id="buttonborder" x-on:click="getData"><strong>PUSH</strong> </button></div>
+      <div>
+        <div class="vertical-center"><button id="buttonborder" x-on:click="getData"><strong>PUSH</strong> </button>
         </div>
-    <div>
+      </div>
+      <div>
         <table style="width:100%">
-            <th>
+          <th>
             NAME
           </th>
-              <th>
+          <th>
             MMR
           </th>
-              <th>
+          <th>
             LEVEL
           </th>
           <th>
             ID
           </th>
           <tr>
-            <td><p x-text="responsedata.name">Placeholder</p></td>
-            <td><p x-text="responsedata.mmr">Placeholder</p></td>
-            <td><p x-text="responsedata.level">Placeholder</p></td>
-            <td><p x-text="responsedata.id">Placeholder</p></td>
+            <td>
+              <p x-text="responsedata.name">Placeholder</p>
+            </td>
+            <td>
+              <p x-text="responsedata.mmr">Placeholder</p>
+            </td>
+            <td>
+              <p x-text="responsedata.level">Placeholder</p>
+            </td>
+            <td>
+              <p x-text="responsedata.id">Placeholder</p>
+            </td>
           </tr>
         </table>
+      </div>
     </div>
-    </div>
-    
+
 
     <h2 class="vertical-center">creeër een nieuwe player</h2>
     <div>
-<div
-    x-data="{
+      <div x-data="{
         responsedata: null,
         postname: null,
         postmmr: null,
@@ -184,41 +210,63 @@ th{
               },
             })).json();
         },
-    }"
-
->
-<div class="vertical-center" style="margin-bottom: 10px;">
-    <div style="margin: 5px;"><input class="inputborder" placeholder="name" type="text" x-model="postname"></div>
-    <div style="margin: 5px;"><input class="inputborder" placeholder="mmr" type="number" x-model="postmmr"></div>
-    <div style="margin: 5px;"><input class="inputborder" placeholder="level" type="number" x-model="postlevel"></div>
-    </div>
-    <div class="vertical-center"><button id="buttonborder" x-on:click="createPost"><strong>CREATE</strong></button></div>
-    <h2>tabel met nieuwe player</h2>
-    <h5>(als je een nieuwe player hebt gemaakt zie je het hier onder)</h5>
-    <div class="vertical-center">
-        <table style="width:100%">
-            <th>
-            NAME
-          </th>
-              <th>
-            MMR
-          </th>
-              <th>
-            LEVEL
-          </th>
-          <tr>
-            <td><p x-text="responsedata.name">Placeholder</p></td>
-            <td><p x-text="responsedata.mmr">Placeholder</p></td>
-            <td><p x-text="responsedata.level">Placeholder</p></td>
-          </tr>
-        </table>
-    </div>
-    <p><strong>name</strong>  that was inserted: <strong x-text="responsedata.name"></strong></p>
-    <p><strong>mmr</strong> that was inserted: <strong x-text="responsedata.mmr"></strong></p>
-    <p><strong>level</strong> that was inserted: <strong x-text="responsedata.level"></strong></p>
-
-</div>
+    }">
+        <div class="vertical-center" style="margin-bottom: 10px;">
+          <div style="margin: 5px;"><input class="inputborder" placeholder="name" type="text" x-model="postname"></div>
+          <div style="margin: 5px;"><input class="inputborder" placeholder="mmr" type="number" x-model="postmmr"></div>
+          <div style="margin: 5px;"><input class="inputborder" placeholder="level" type="number" x-model="postlevel">
+          </div>
         </div>
+        <div class="vertical-center"><button id="buttonborder" x-on:click="createPost"><strong>CREATE</strong></button>
+        </div>
+        <h2>tabel met nieuwe player</h2>
+        <h5>(als je een nieuwe player hebt gemaakt zie je het hier onder)</h5>
+        <div class="vertical-center">
+          <table style="width:100%">
+            <th>
+              NAME
+            </th>
+            <th>
+              MMR
+            </th>
+            <th>
+              LEVEL
+            </th>
+            <tr>
+              <td>
+                <p x-text="responsedata.name">Placeholder</p>
+              </td>
+              <td>
+                <p x-text="responsedata.mmr">Placeholder</p>
+              </td>
+              <td>
+                <p x-text="responsedata.level">Placeholder</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p><strong>name</strong> that was inserted: <strong x-text="responsedata.name"></strong></p>
+        <p><strong>mmr</strong> that was inserted: <strong x-text="responsedata.mmr"></strong></p>
+        <p><strong>level</strong> that was inserted: <strong x-text="responsedata.level"></strong></p>
+
+      </div>
+    </div>
+    <div x-data="{
+        responsedata: null,
+        postname: null,
+        postmmr: null,
+        postlevel: null,
+        postid: null,
+        async getData() {
+            this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/players/random/')).json();
+        },
+    }">
+      <div>
+        <div style="margin: 5px;"><input class="inputborder" placeholder="name" type="text" x-model="postname"></div>
+
+      </div>
+
     </div>
 </body>
+
 </html>
