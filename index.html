@@ -92,6 +92,32 @@
 
       <h1>Rocket league</h1>
     </header>
+    <h2 class="vertical-center">maak een user aan</h2>
+    <h5 class="vertical-center">als je je gegevens hebt ingegeven druk je éénmaal op create om jouw user aan te maken</h5>
+    <div>
+      <div x-data="{
+        responsedata: null,
+        postemail: null,
+        postpassword: null,
+        async createPost() {
+            this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/users/create/', {
+              method: 'POST',
+              body: JSON.stringify({
+                    email: this.postemail,
+                    password: this.postpass,
+              }),
+              headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              },
+            })).json();
+        },
+    }">
+        <div class="vertical-center" style="margin-bottom: 10px;">
+          <div style="margin: 5px;"><input class="inputborder" placeholder="email" type="text" x-model="postemail"></div>
+          <div style="margin: 5px;"><input class="inputborder" placeholder="password" type="text" x-model="postpass"></div>
+        </div>
+        <div class="vertical-center"><button id="buttonborder" x-on:click="createPost"><strong>CREATE</strong></button>
+        </div>
     <h2>lijst van alle players</h2>
     <h4>(refresh pagina als je de lijst wilt updaten!)</h4>
     <div>
@@ -250,29 +276,6 @@
         <p><strong>level</strong> that was inserted: <strong x-text="responsedata.level"></strong></p>
 
       </div>
-    </div>
-    <div x-data="{
-      responsedata: null,
-      postid: null,
-      async createPost() {
-          this.responsedata = await (await fetch('https://system-service-timogoossens.cloud.okteto.net/players/{player_id}/', {
-            method: 'GET',
-            body: JSON.stringify({
-                  id: this.postid
-            }),
-            headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-            },
-          })).json();
-      },
-  }">
-      <div class="vertical-center" style="margin-bottom: 10px;">
-        <div style="margin: 5px;"><input class="inputborder" placeholder="id" type="number" x-model="postid">
-        </div>
-      </div>
-      <div class="vertical-center"><button id="buttonborder" x-on:click="createPost"><strong>CREATE</strong></button>
-      </div>
-
     </div>
   </div>
 </body>
