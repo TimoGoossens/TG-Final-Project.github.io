@@ -219,6 +219,51 @@ th{
 
 </div>
         </div>
+<br>
+
+<h2>lijst van alle players</h2>
+<h4>(refresh pagina als je de lijst wilt updaten!)</h4>
+<div>
+    <table style="width:100%" x-data="alpineInstance()" x-init="fetch('https://system-service-timogoossens.cloud.okteto.net/users/')
+    .then(response => response.json())
+    .then(data => users = data)">
+    
+      <tr>
+        <th><strong>NAME:</strong>
+            </th>
+      <template x-for="usr in users" :key="index">
+        
+        <td><p x-text="usr.name">Placeholder</p></td>
+        
+    </template>
+    </tr>
+    <tr>
+        <th>
+            <strong>MMR:</strong>
+          </th>
+      <template x-for="usr in users" :key="index">
+        <td><p x-text="usr.mmr">Placeholder</p></td>
+    </template>
+    </tr>
+    <tr>
+        <th>
+            <strong>LEVEL:</strong>
+          </th>
+      <template x-for="usr in users" :key="index">
+        <td><p x-text="usr.level">Placeholder</p></td>
+    </template>
+    </tr>
+    <tr>
+        <th>
+            <strong>ID:</strong>
+          </th>
+      <template x-for="usr in users" :key="index">
+        <td><p x-text="usr.id">Placeholder</p></td>
+    </template>
+    </tr>
+    </table>
+</div>
+
     </div>
 </body>
 </html>
